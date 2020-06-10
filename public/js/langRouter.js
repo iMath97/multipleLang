@@ -5,9 +5,9 @@ let nlBTN;
 getCookie();
 
 if(document.title == "router"){
-    if(getCookie == null){
+    if(lang != "nl" && lang != "en"){
         setCookie("nl");
-        routeVisitor();
+        location.href = "/nl/home.html";
     } else {
         routeVisitor();
     }
@@ -16,6 +16,7 @@ if(document.title == "router"){
 function getCookie(){
     let cookie = document.cookie.split("=");
     lang = cookie[1];
+    console.log(lang);
 }
 
 function setCookie(lang){
